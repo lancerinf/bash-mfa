@@ -57,6 +57,6 @@ while true; do
     else
         echo -ne "$D: $X\r"
     fi
-    echo -n $X | pbcopy
+    echo -n $X | xclip -selection c
     sleep 1
 done
