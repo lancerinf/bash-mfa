@@ -1,7 +1,7 @@
-# bash-mfa
+# bash-otp
 One-Time Password generator for CLI using bash, oathtool.
 
-Automatically copys the token into your computer's copy buffer (Linux xclip)
+Automatically copys the token into your computer's copy buffer (MacOS only atm)
 
 This is basically "Authy for the CLI"
 
@@ -11,7 +11,7 @@ This script supports both encrypted and plain-text token files, but my reccomend
 
 * oathtool (http://www.nongnu.org/oath-toolkit/)
 * OpenSSL
-* xclip
+
 
 ## Description
 
@@ -50,7 +50,7 @@ The number on the left is the seconds counter; a new TOTP token is generated eve
 
 The number on the right is the 6-digit One-Time Password.
 
-On Linux, this will be copied directly into the paste buffer. Just press "Command-V" to paste into a login dialog.
+On MacOS, this will be copied directly into the paste buffer. Just press "Command-V" to paste into a login dialog.
 
 
 ## Contents
