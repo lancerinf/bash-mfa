@@ -26,7 +26,7 @@ if [ -z "$token" ]; then echo "Need token filename"; exit 1; fi
 # Returns the token
 function get_decrypted_token_from_file {
     read -s -r -p "Password: " PASSWORD
-    echo $PASSWORD | openssl enc -aes-256-cbc -d -salt -pass stdin -in ${TOKENFILES_DIR}/${token}.enc
+    echo $PASSWORD | openssl enc -aes-256-cbc -d -salt -md md5 -pass stdin -in ${TOKENFILES_DIR}/${token}.enc
 }
 
 function get_plaintext_token_from_file {

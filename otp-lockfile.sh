@@ -25,7 +25,7 @@ read -s -r -p "Enter that password again: " PASSWORD2
 if [[ "${PASSWORD1}" == "${PASSWORD2}" ]]; then
 
     echo "${PASSWORD1}" > "${PW_FILE}"
-    openssl enc -aes-256-cbc -salt -in "${INPUT_FILE}" -out "${INPUT_FILE}.enc" -pass file:"${PW_FILE}" && rm "${INPUT_FILE}" && rm "${PW_FILE}"
+    openssl enc -aes-256-cbc -salt -md md5 -in "${INPUT_FILE}" -out "${INPUT_FILE}.enc" -pass file:"${PW_FILE}" && rm "${INPUT_FILE}" && rm "${PW_FILE}"
     echo "Decrypt this file using the following command:"
     echo "openssl enc -aes-256-cbc -d -salt -in ${INPUT_FILE}.enc -out ${INPUT_FILE}"
 else

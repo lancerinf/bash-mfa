@@ -23,5 +23,5 @@ fi
 read -s -r -p "Password to unlock file: " PASSWORD1
 
 echo "${PASSWORD1}" > "${PW_FILE}"
-openssl enc -aes-256-cbc -d -salt -in "${INPUT_FILE}" -out "${OUTPUT_FILE}" -pass file:"${PW_FILE}"
+openssl enc -aes-256-cbc -d -salt -md md5 -in "${INPUT_FILE}" -out "${OUTPUT_FILE}" -pass file:"${PW_FILE}"
 rm "${PW_FILE}"
